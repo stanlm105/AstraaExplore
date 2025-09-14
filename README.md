@@ -47,23 +47,30 @@ I will freely add materials, tools, utilities here that aid me in the journey.
 General Roadmap:
 
 Quest 1: Messier Observing Program
-    a. Youtube Channel
+-    a. Youtube Channel
         Coming soon. For those opting for longer play background narration, documenting my journey to certification of the messier observing program by Astronomical League
-    b. Messier Logbook Generator
-        Coming soon. Small utility to generate a personalized log book for recording one's journey.
-        Format: Docker / GCS / Cloud Run
-        User interface: Web
+-    b. Messier Logbook Generator
+        Coming soon. Small utility to generate a personalized log book for recording one's journey.<br>
+        Format: Docker / GCS / Cloud Run<br>
+        User interface: Web<br>
         Free
-    c. Messier Target Guidance Computer
-        Coming soon. Small utility to auto-suggest the best Messier target to try given one's current location and the remaining objects remaining in one's quest.
-        Format: Docker / GCS / Cloud Run / Cloud SQL
-        User interface: Web
+-    c. Messier Target Guidance Computer
+        Coming soon. Small utility to auto-suggest the best Messier target to try given one's current location and the remaining objects remaining in one's quest.<br>
+        Format: Docker / GCS / Cloud Run / Cloud SQL<br>
+        User interface: Web<br>
         Free
 
 Quest 2: Dobsonian Astrophotography
-    a. Image Stacking Pipeline Utilities
-        Aimed at stacking images geared towards output from Dobsonian mounted micro four thirds DSLR exposures (as opposed to FIPS/SmartScope sources)
-        Aimed at being pragmatic and simple, not that this will be better or not better than other resources, just wishing to help beginners and be an avenue for those that might like my little bit infra/cloud tools approach to the topic.
-        Format: TBD
-        User interface: TBD
-        Free
+-    a. Image Stacking Pipeline Utilities
+        Aimed at stacking images geared towards output from Dobsonian mounted micro four thirds DSLR exposures (as opposed to FIPS/SmartScope sources)<br>
+        Aimed at being pragmatic and simple, not that this will be better or not better than other resources, just wishing to help beginners and be an avenue for those that might like my little bit infra/cloud tools approach to the topic.<br>
+        Format: TBD<br>
+        User interface: TBD<br>
+        Free<br>
+
+License<br>
+Code: MIT (see LICENSE).<br>
+Documentation/screenshots: CC BY 4.0 (see docs/LICENSE).<br>
+Logo (docs/images/galaxy_logo.png): All Rights Reserved. Contact for permission.<br>
+
+
