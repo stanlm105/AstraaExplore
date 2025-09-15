@@ -54,7 +54,6 @@ venv.bak/
 
 # Output / generated files
 output/
-*.pdf
 
 # Logs
 *.log
