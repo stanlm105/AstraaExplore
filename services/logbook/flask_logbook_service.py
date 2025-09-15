@@ -1,0 +1,133 @@
+"""
+Flask web service for generating personalized Messier Log Book PDFs.
+"""
+
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+
+from flask import Flask, request, send_file, render_template_string, Response, abort, url_for
+from pathlib import Path
+from io import BytesIO
+from pypdf import PdfReader, PdfWriter
+from utils.pdf_helpers import build_overlay, flatten_forms
+from utils.validation import validate_name
+import os
+
+project_root = Path(__file__).resolve().parent.parent.parent
+app = Flask(__name__, static_folder=str(project_root / "static"))
+
+# Adjust path to match your project structure
+TEMPLATE_PDF = Path(__file__).resolve().parent.parent.parent / "assets" / "templates" / "messier_logbook_template_final-6.pdf"
+
+
+# Initialize Flask-Limiter
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["10 per hour"]  # Adjust as needed
+)
+
+@app.route("/", methods=["GET"])
+def index() -> str:
+    """
+    Render the HTML form for user name input, with language switch.
+
+    Returns:
+        str: Rendered HTML form.
+    """
+    lang = request.args.get("lang", "en")
+    if lang == "ja":
+        texts = {
+            "title": "メシエログブックジェネレーター",
+            "name_label": "下のPDFは、夜空の110個のメシエ天体の観測記録をつけるための印刷可能なログブックです。ログブック表紙に記載するお名前を入力してください（これは楽しさやモチベーションのためだけで、名前の記録や保存は一切行いません）。",
+            "button": "PDFをダウンロード",
+            "language": "言語",
+            "english": "英語",
+            "japanese": "日本語"
+        }
+    else:
+        texts = {
+            "title": "Messier Log Book Generator",
+            "name_label": "The pdf below will be a printable log book for tracking observations of the 110 Messier objects in the night sky. Enter your name for personalization of the logbook cover (this is just to make it fun and inspiring, there is no log saved here of any names):",
+            "button": "Download PDF",
+            "language": "Language",
+            "english": "English",
+            "japanese": "Japanese"
+        }
+    return render_template_string(f"""
+    <!DOCTYPE html>
+    <html lang="{lang}">
+    <head>
+        <meta charset="UTF-8">
+        <title>{texts['title']}</title>
+        <link rel="icon" type="image/x-icon" href="{{{{ url_for('static', filename='favicon.ico') }}}}">
+    </head>
+    <body>
+    <center><font face="Arial, Helvetica, sans-serif">
+    <h2>{texts['title']}</h2>
+    <form method="post" action="/generate?lang={lang}">
+        <a href="https://github.com/stanlm105/MessierExplore"><img src="{{{{ url_for('static', filename='logo_main_2.png') }}}}" alt="Logo" width="300"></a><br><br>
+        <table border=0><tr><td width=350>
+            <label for="name">{texts['name_label']}</label>
+        </td></tr></table><br><br>
+        <table border=1 cellpadding=0 cellspacing=0>
+            <tr>
+                <td><input type="text" id="name" name="name" required></td>
+            </tr>
+        </table><br>
+        <button type="submit">{texts['button']}</button><br><br>
+        <label for="lang">{texts['language']}:</label>
+        <select id="lang" name="lang" onchange="window.location='/?lang='+this.value;">
+            <option value="en" {'selected' if lang == 'en' else ''}>{texts['english']}</option>
+            <option value="ja" {'selected' if lang == 'ja' else ''}>{texts['japanese']}</option>
+        </select>
+    </form>
+    </font></center>
+    </body>
+    </html>
+    """)
+
+@app.route("/generate", methods=["POST"])
+@limiter.limit("10 per hour")
+def generate() -> Response:
+    """
+    Handle form submission, validate the name, generate the PDF,
+    and return it as a downloadable file.
+
+    Returns:
+        Response: Flask response with the generated PDF or error message.
+    """
+    lang = request.args.get("lang", "en")
+    name = request.form.get("name", "Anonymous")
+    try:
+        name = validate_name(name)
+    except ValueError as e:
+        # Return a simple HTML error message, localized
+        msg = f"Invalid name: {e}" if lang == "en" else f"無効な名前: {e}"
+        return render_template_string(f"<h3>{msg}</h3><a href='/?lang={lang}'>Try again</a>"), 400
+
+    reader = PdfReader(str(TEMPLATE_PDF))
+    writer = PdfWriter()
+    p0 = reader.pages[0]
+    overlay = build_overlay(float(p0.mediabox.width), float(p0.mediabox.height), name)
+    p0.merge_page(overlay)
+    writer.add_page(p0)
+    for i in range(1, len(reader.pages)):
+        writer.add_page(reader.pages[i])
+    flatten_forms(writer)
+    buf = BytesIO()
+    writer.write(buf)
+    buf.seek(0)
+    return send_file(
+        buf,
+        mimetype="application/pdf",
+        as_attachment=True,
+        download_name="MessierLogBookForYou.pdf"
+    )
+
+@app.route('/favicon.ico')
+def favicon():
+    """
+    Serve the favicon.ico from the static folder.
+    """
+    return send_file(app.static_folder + '/favicon.ico')

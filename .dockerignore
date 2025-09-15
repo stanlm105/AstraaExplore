@@ -1,0 +1,48 @@
+# .dockerignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code settings
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# Output PDFs or other generated files
+output/
+*.pdf
+
+# Git
+.git/
+.gitignore
+
+# OS junk files
+Thumbs.db
+ehthumbs.db
+
+# Python virtual environments
+venv/
+.venv/
+build/
+dist/
+*.log
+.DS_Store
+
+# Python packaging
+*.egg-info/
+.eggs/
+
+# Test and type checking caches
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Environment files
+.env
+
+# Misc
+*.bak
+*.swp

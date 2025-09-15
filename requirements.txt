@@ -1,0 +1,5 @@
+Flask>=3.0
+gunicorn>=21.2
+pypdf>=4.0
+reportlab>=4.0
+Flask-Limiter>=3.0
