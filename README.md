@@ -1,4 +1,4 @@
-# 🌌 Welcome to AstraaExplore! — Free Astronomy Tools & Mini-Projects
+# 🌌 Welcome to AstraaExplore — Free Astronomy Tools & Mini-Projects (work-in-progress)  Last update: Sep 2025
 Exploring the cosmos via accessibility materials, tools, pipelines, and more to come.
 > Explore the night sky with beginner-friendly utilities.  
 > **Free to use. Open to peek under the hood.**
