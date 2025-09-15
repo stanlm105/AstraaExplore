@@ -27,11 +27,12 @@ I will freely add materials, tools, utilities here that aid me in the journey.
 
 ### 1) Messier Observing Logbook (PDF)
 - **What it is:** Printable, numbered logbook (110 objects), with full-page notes & sketch area, and a clean cover.
-- **Get it:** Web link TBD, Python script TBD (web link is code free, python is for those interested in the docker source)
-- **Features:** checklist, per-object pages, clean typography.
+- **Get it:** No code needed, free: https://ms-ms-gh-me-logbook-696367436779.us-east4.run.app
+- **Code:** Also in this repository as a python command-line script, and then as a web service; see files named logbook.
+- **Features:** personalized cover page, checklist, per-object log pages, clean typography.
 
 ### 2) Messier Target Guidance (Web)
-- **What it is:** Suggests the next best Messier targets based on your location/time, remaining items in your checklist and object in ideal viewing position (closer to Zenith rather than horizon).
+- **What it is:** Suggests the next best Messier targets based on your location/time, remaining items in your checklist and any other factors I can think of (darkness? angle from zenith?)
 - **Try it:** (link when live)  
 - **Inputs:** location, time, horizon cutoff; **Outputs:** ranked list with dusk/dawn windows. Sky darkness info.
 
