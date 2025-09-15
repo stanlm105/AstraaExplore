@@ -11,7 +11,7 @@ Hi, my name is Mike. This journey is notes about my personal exploration of the 
 There are many different avenues one could take in this topic, that's part of the beauty of it! I can't say whether or not the avenue that I present here will be best for everyone, just the way I wish to approach it for myself. 
 In a nutshell, the avenue of my journey is exploring via an 8" manual dobsonian telescope, plus accessories. 
 The first part of my new journey here is the classic exercise of the Messier Observing Program of logging and sketch the 110 Messier objects.
-Along the way, I will explore astrophotography along the way (yes, even with the dobsonian) and share triumphs and troubles alike.
+Along the way, I’m exploring astrophotography and will share both triumphs and challenges.
 I will freely add materials, tools, utilities here that aid me in the journey.
 
 ## Quick Links
