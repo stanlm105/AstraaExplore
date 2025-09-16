@@ -5,7 +5,7 @@ Flask web service for generating personalized Messier Log Book PDFs.
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
-from flask import Flask, request, send_file, render_template_string, Response, abort, url_for
+from flask import Flask, redirect, request, send_file, render_template_string, Response, abort, url_for
 from pathlib import Path
 from io import BytesIO
 from pypdf import PdfReader, PdfWriter
@@ -19,13 +19,56 @@ app = Flask(__name__, static_folder=str(project_root / "static"))
 # Adjust path to match your project structure
 TEMPLATE_PDF = Path(__file__).resolve().parent.parent.parent / "assets" / "templates" / "messier_logbook_template_final-6.pdf"
 
+@app.before_request
+def enforce_non_www():
+    host = request.headers.get("Host", "")
+    if host.startswith("www."):
+        url = request.url.replace("://www.", "://", 1)
+        return redirect(url, code=301)
 
 # Initialize Flask-Limiter
 limiter = Limiter(
     get_remote_address,
-    app=app,
-    default_limits=["10 per hour"]  # Adjust as needed
+    app=app
 )
+
+@app.route("/generate", methods=["POST"])
+@limiter.limit("10 per hour")
+def generate() -> Response:
+    """
+    Handle form submission, validate the name, generate the PDF,
+    and return it as a downloadable file.
+
+    Returns:
+        Response: Flask response with the generated PDF or error message.
+    """
+    lang = request.args.get("lang", "en")
+    name = request.form.get("name", "Anonymous")
+    try:
+        name = validate_name(name)
+    except ValueError as e:
+        # Return a simple HTML error message, localized
+        msg = f"Invalid name: {e}" if lang == "en" else f"無効な名前: {e}"
+        return render_template_string(f"<h3>{msg}</h3><a href='/?lang={lang}'>Try again</a>"), 400
+
+    reader = PdfReader(str(TEMPLATE_PDF))
+    writer = PdfWriter()
+    p0 = reader.pages[0]
+    overlay = build_overlay(float(p0.mediabox.width), float(p0.mediabox.height), name)
+    p0.merge_page(overlay)
+    writer.add_page(p0)
+    for i in range(1, len(reader.pages)):
+        writer.add_page(reader.pages[i])
+    flatten_forms(writer)
+    buf = BytesIO()
+    writer.write(buf)
+    buf.seek(0)
+    return send_file(
+        buf,
+        mimetype="application/pdf",
+        as_attachment=True,
+        download_name=f"MessierLogBook_{name}.pdf"
+    )
 
 @app.route("/", methods=["GET"])
 def index() -> str:
@@ -89,44 +132,6 @@ def index() -> str:
     </body>
     </html>
     """)
-
-@app.route("/generate", methods=["POST"])
-@limiter.limit("10 per hour")
-def generate() -> Response:
-    """
-    Handle form submission, validate the name, generate the PDF,
-    and return it as a downloadable file.
-
-    Returns:
-        Response: Flask response with the generated PDF or error message.
-    """
-    lang = request.args.get("lang", "en")
-    name = request.form.get("name", "Anonymous")
-    try:
-        name = validate_name(name)
-    except ValueError as e:
-        # Return a simple HTML error message, localized
-        msg = f"Invalid name: {e}" if lang == "en" else f"無効な名前: {e}"
-        return render_template_string(f"<h3>{msg}</h3><a href='/?lang={lang}'>Try again</a>"), 400
-
-    reader = PdfReader(str(TEMPLATE_PDF))
-    writer = PdfWriter()
-    p0 = reader.pages[0]
-    overlay = build_overlay(float(p0.mediabox.width), float(p0.mediabox.height), name)
-    p0.merge_page(overlay)
-    writer.add_page(p0)
-    for i in range(1, len(reader.pages)):
-        writer.add_page(reader.pages[i])
-    flatten_forms(writer)
-    buf = BytesIO()
-    writer.write(buf)
-    buf.seek(0)
-    return send_file(
-        buf,
-        mimetype="application/pdf",
-        as_attachment=True,
-        download_name="MessierLogBookForYou.pdf"
-    )
 
 @app.route('/favicon.ico')
 def favicon():
