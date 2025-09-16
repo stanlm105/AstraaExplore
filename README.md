@@ -34,7 +34,7 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 
 ### 1) Messier Observing Logbook (PDF)
 - **What it is:** Printable, numbered logbook (110 objects), with full-page notes & sketch area, and a clean cover.
-- **Get it Free:** https://ms-ms-gh-me-logbook-696367436779.us-east4.run.app
+- **Get it Free:** https://messierexplore.com
 - **Code:** Located in this repository as a python command-line script, and then as a web service; see files named logbook.
 - **Features:** personalized cover page, checklist, per-object log pages, clean typography.
 
