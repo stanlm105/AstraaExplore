@@ -39,7 +39,7 @@ def index() -> str:
     if lang == "ja":
         texts = {
             "title": "メシエログブックジェネレーター",
-            "name_label": "下のPDFは、夜空の110個のメシエ天体の観測記録をつけるための印刷可能なログブックです。ログブック表紙に記載するお名前を入力してください（これは楽しさやモチベーションのためだけで、名前の記録や保存は一切行いません）。",
+            "name_label": "下のPDFは、夜空の110個のメシエ天体の観測記録をつけるための印刷可能なログブックです。ログブック表紙に記載するお名前（ニックネームでも可）を入力してください（これは楽しさやモチベーションのためだけで、名前の記録や保存は一切行いません）。",
             "button": "PDFをダウンロード",
             "language": "言語",
             "english": "英語",
@@ -48,7 +48,7 @@ def index() -> str:
     else:
         texts = {
             "title": "Messier Log Book Generator",
-            "name_label": "The pdf below will be a printable log book for tracking observations of the 110 Messier objects in the night sky. Enter your name for personalization of the logbook cover (this is just to make it fun and inspiring, there is no log saved here of any names):",
+            "name_label": "The pdf below will be a printable log book for tracking observations of the 110 Messier objects in the night sky.<br><br>Enter your name for personalization of the logbook cover (this is to make it fun and inspiring, there is no log saved here of any names).<br><br>Please enter your name or nickname:",
             "button": "Download PDF",
             "language": "Language",
             "english": "English",
@@ -69,18 +69,21 @@ def index() -> str:
         <a href="https://github.com/stanlm105/MessierExplore"><img src="{{{{ url_for('static', filename='logo_main_2.png') }}}}" alt="Logo" width="300"></a><br><br>
         <table border=0><tr><td width=350>
             <label for="name">{texts['name_label']}</label>
-        </td></tr></table><br><br>
-        <table border=1 cellpadding=0 cellspacing=0>
+        </td></tr></table><br>
+        <table border=0 cellpadding=0 cellspacing=0>
             <tr>
-                <td><input type="text" id="name" name="name" required></td>
+                <td><input type="text" id="name" name="name" value="John Doe" required></td>
+                <td width=10></td>
+                <td><button type="submit">{texts['button']}</button></td>
             </tr>
         </table><br>
-        <button type="submit">{texts['button']}</button><br><br>
         <label for="lang">{texts['language']}:</label>
         <select id="lang" name="lang" onchange="window.location='/?lang='+this.value;">
             <option value="en" {'selected' if lang == 'en' else ''}>{texts['english']}</option>
             <option value="ja" {'selected' if lang == 'ja' else ''}>{texts['japanese']}</option>
         </select>
+        <br><br>
+        <img src="{{{{ url_for('static', filename='logbook_sample.png') }}}}" alt="Sample" width="600">
     </form>
     </font></center>
     </body>
