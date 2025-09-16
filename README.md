@@ -1,18 +1,18 @@
 ![Logo](static/logo_main_2_nobg.png)
 
-# 🌌 Welcome to MessierExplore — Free Astronomy Tools & Mini-Projects
-Exploring the cosmos via accessibility materials, tools, pipelines, and more to come.
-> Explore the night sky with beginner-friendly utilities.  
-> **Free to use. Open to peek under the hood.**
+# 🌌 MessierExplore  
+_Free Astronomy Tools & Mini-Projects — explore the night sky with smart, beginner-friendly utilities._  
 
 [![Made with Python](https://img.shields.io/badge/Python-3.11+-informational)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]()
 [![Status](https://img.shields.io/badge/status-active-blue)]()
 [![Last Commit](https://img.shields.io/github/last-commit/stanlm105/MessierExplore)]()
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)]()
+![FastAPI](https://img.shields.io/badge/FastAPI-async-green)
+![Cloud Run](https://img.shields.io/badge/Deployed%20on-Cloud%20Run-blue)
+![Open-Meteo](https://img.shields.io/badge/Weather-Open--Meteo-lightblue)
 
 ![Sample Logbook](static/logbook_sample.png)
-
 
 > Hi, my name is Mike. MessierExplore is a personal astronomy journey turned open toolkit — offering logbooks, sky guidance, and astrophotography utilities. Free, beginner-friendly, and built with Python + cloud tools.<br><br>
 > There are many different avenues one could take in this topic, which is fascinating. I'm intrigued by Red Cat's high production products, I'm intrigued by the automated pipelines and precise EQ tracking of SmartScopes. That said, the focus of the explorations here will be through that of the classic dobsonian. <br><br>
@@ -39,16 +39,18 @@ Exploring the cosmos via accessibility materials, tools, pipelines, and more to 
 - **Features:** personalized cover page, checklist, per-object log pages, clean typography.
 
 ### 2) Messier Target Guidance Computer (Web App)
-- **What it is:** All your viewing condition info and suggestion for next best Messier target from your remaining targets based on many meteorlogical factors pulled from free sources on the web.
-- **Try it:** (link when live)  
-- **Inputs:** location; **Outputs:** Ranked list, conditions<br><br>
+- 📝 **Inputs:** location, passphrase  
+- 📊 **Outputs:** ranked list of suggested Messier targets + tonight’s conditions  
+- 🌐 **Try it:** (link when live)
 
 > 🚀 **Why Target Guidance Computer is Exciting**  
 > The Target Guidance Computer is more than a Messier checklist – it’s a smart companion that combines astronomy math with real-world conditions.  
-> At a glance you’ll know: ✨ what you haven’t logged yet, 🌙 which objects sit high and clear of the Moon, and ☁️ how tonight’s clouds, darkness, and sky quality affect your session.  
-> With nothing more than a passphrase and your postal code, the tool personalizes your observing journey, tracks your “seen” list, and serves up the best targets for today at **9 PM local time**.  
+> ✨ Shows you what you haven’t logged yet  
+> 🌙 Highlights which objects sit high and clear of the Moon  
+> ☁️ Explains how tonight’s clouds, darkness, and sky quality affect your session  
+>  
+> With nothing more than a passphrase and your postal code, the tool personalizes your observing journey, tracks your “seen” list, and serves up the best targets for **today at 9 PM local time**.  
 > 💡 Lightweight, free, and built to grow – practical backend engineering powering human-friendly exploration of the night sky.
-<br>
 
 ### 3) Dobsonian Astrophotography — Simple Stacking Utils (CLI, GUI.. tbd)
 - **What it is:** Lightweight, beginner-friendly image stacking pipeline for Dobsonian + MFT DSLR. For myself I'm planning micro four thirds adapter to keep weight down. Dobsonian is not expected to be best choice for astrophotography, but like a manual transmission car, I'd like to explore what steps optimize the fun and results even if it might not outclass dedicated rigs and smartscopes.
@@ -59,13 +61,14 @@ Exploring the cosmos via accessibility materials, tools, pipelines, and more to 
 ---
 
 ## Code & Repo Structure
-```
+```text
 ├── assets/          # templates, static files
 ├── services/        # tools (eg logbook) as web services
 ├── tools/           # tools (eg logbook) as command line apps
 ├── tests/           # pytest test suite
 └── utils/           # shared logic between web service apps and CLI apps 
 ```
+
 ---
 
 ## Project Roadmap
@@ -79,7 +82,12 @@ Exploring the cosmos via accessibility materials, tools, pipelines, and more to 
 - [ ] Image Stacking Pipeline Utilities (Dobsonian + MFT DSLR)  
 
 ---
+
 ## 📄 License
 - Code: MIT (see [LICENSE](LICENSE))  
 - Documentation/screenshots: CC BY 4.0 (see docs/LICENSE)  
 - Logo: All Rights Reserved (contact for permission)  
+
+---
+
+⭐ If you like this project, give it a star and follow along — more tools are on the way!
