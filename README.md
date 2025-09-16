@@ -6,19 +6,24 @@ Exploring the cosmos via accessibility materials, tools, pipelines, and more to 
 [![Made with Python](https://img.shields.io/badge/Python-3.11+-informational)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]()
 [![Status](https://img.shields.io/badge/status-active-blue)]()
+[![Last Commit](https://img.shields.io/github/last-commit/stanlm105/MessierExplore)]()
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)]()
 
-Hi, my name is Mike. This journey is notes about my personal exploration of the night sky with milestones and goals. 
-There are many different avenues one could take in this topic, that's part of the beauty of it! I can't say whether or not the avenue that I present here will be best for everyone, just the way I wish to approach it for myself. 
-In a nutshell, the avenue of my journey is exploring via an 8" manual dobsonian telescope, plus accessories. 
-The first part of my new journey here is the classic exercise of the Messier Observing Program of logging and sketch the 110 Messier objects.
-Along the way, I’m exploring astrophotography and will share both triumphs and challenges.
-I will freely add materials, tools, utilities here that aid me in the journey.
+![Sample Logbook](static/logbook_sample.png)
+
+
+> Hi, my name is Mike. MessierExplore is a personal astronomy journey turned open toolkit — offering logbooks, sky guidance, and astrophotography utilities. Free, beginner-friendly, and built with Python + cloud tools.<br><br>
+> There are many different avenues one could take in this topic, which is fascinating. I'm intrigued by Red Cat's high production products, I'm intrigued by the automated pipelines and precise EQ tracking of SmartScopes. That said, the focus of the explorations here will be through that of the classic dobsonian. <br><br>
+> The first quest in this journey is the classic exercise of the Messier Observing Program for manually logging and sketching the 110 Messier objects of the night sky.<br><br>
+> The side quest is exploring astrophotography and will share both triumphs and challenges.<br><br>
+> I will freely add materials, tools, utilities here that aid in the journey.<br><br>
+
+---
 
 ## Quick Links
-- 📥 **Download / Use Tools:** see **Tools for Everyone** below
-- 💻 **Peek at the Code:** see **Code & Repo Structure**
-- 🗺️ **Roadmap / What’s Next:** see **Project Roadmap**
-
+- 📥 [Download / Use Tools](#tools-for-everyone)  
+- 💻 [Peek at the Code](#code--repo-structure)  
+- 🗺️ [Roadmap / What’s Next](#project-roadmap)
 ---
 
 ## Tools for Everyone
@@ -27,8 +32,8 @@ I will freely add materials, tools, utilities here that aid me in the journey.
 
 ### 1) Messier Observing Logbook (PDF)
 - **What it is:** Printable, numbered logbook (110 objects), with full-page notes & sketch area, and a clean cover.
-- **Get it:** No code needed, free: https://ms-ms-gh-me-logbook-696367436779.us-east4.run.app
-- **Code:** Also in this repository as a python command-line script, and then as a web service; see files named logbook.
+- **Get it Free:** https://ms-ms-gh-me-logbook-696367436779.us-east4.run.app
+- **Code:** Located in this repository as a python command-line script, and then as a web service; see files named logbook.
 - **Features:** personalized cover page, checklist, per-object log pages, clean typography.
 
 ### 2) Messier Target Guidance (Web)
@@ -44,34 +49,28 @@ I will freely add materials, tools, utilities here that aid me in the journey.
 
 ---
 
+## Code & Repo Structure
+```
+├── assets/          # templates, static files
+├── services/        # tools (eg logbook) as web services
+├── tools/           # tools (eg logbook) as command line apps
+├── tests/           # pytest test suite
+└── utils/           # shared logic between web service apps and CLI apps 
+```
+---
 
-General Roadmap:
+## Project Roadmap
 
-Quest 1: Messier Observing Program
--    a. Youtube Channel
-        Coming soon. For those opting for longer play background narration, documenting my journey to certification of the messier observing program by Astronomical League
--    b. Messier Logbook Generator
-        Coming soon. Small utility to generate a personalized log book for recording one's journey.<br>
-        Format: Docker / GCS / Cloud Run<br>
-        User interface: Web<br>
-        Free
--    c. Messier Target Guidance Computer
-        Coming soon. Small utility to auto-suggest the best Messier target to try given one's current location and the remaining objects remaining in one's quest.<br>
-        Format: Docker / GCS / Cloud Run / Cloud SQL<br>
-        User interface: Web<br>
-        Free
+### Quest 1: Messier Observing Program
+- [ ] YouTube Channel (journey to Astronomical League certification)  
+- [ ] Messier Logbook Generator (Docker / GCS / Cloud Run)  
+- [ ] Messier Target Guidance Computer (location-based, Cloud Run + SQL)  
 
-Quest 2: Dobsonian Astrophotography
--    a. Image Stacking Pipeline Utilities
-        Aimed at stacking images geared towards output from Dobsonian mounted micro four thirds DSLR exposures (as opposed to FIPS/SmartScope sources)<br>
-        Aimed at being pragmatic and simple, not that this will be better or not better than other resources, just wishing to help beginners and be an avenue for those that might like my little bit infra/cloud tools approach to the topic.<br>
-        Format: TBD<br>
-        User interface: TBD<br>
-        Free<br>
+### Quest 2: Dobsonian Astrophotography
+- [ ] Image Stacking Pipeline Utilities (Dobsonian + MFT DSLR)  
 
-License<br>
-Code: MIT (see LICENSE).<br>
-Documentation/screenshots: CC BY 4.0 (see docs/LICENSE).<br>
-Logo (docs/images/galaxy_logo.png): All Rights Reserved. Contact for permission.<br>
-
-
+---
+## 📄 License
+- Code: MIT (see [LICENSE](LICENSE))  
+- Documentation/screenshots: CC BY 4.0 (see docs/LICENSE)  
+- Logo: All Rights Reserved (contact for permission)  
