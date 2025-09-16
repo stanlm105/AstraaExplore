@@ -1,4 +1,6 @@
-# 🌌 Welcome to MessierExplore — Free Astronomy Tools & Mini-Projects (work-in-progress)  Last update: Sep 2025
+![Logo](static/logo_main_2_nobg.png)
+
+# 🌌 Welcome to MessierExplore — Free Astronomy Tools & Mini-Projects
 Exploring the cosmos via accessibility materials, tools, pipelines, and more to come.
 > Explore the night sky with beginner-friendly utilities.  
 > **Free to use. Open to peek under the hood.**
@@ -36,10 +38,17 @@ Exploring the cosmos via accessibility materials, tools, pipelines, and more to 
 - **Code:** Located in this repository as a python command-line script, and then as a web service; see files named logbook.
 - **Features:** personalized cover page, checklist, per-object log pages, clean typography.
 
-### 2) Messier Target Guidance (Web)
-- **What it is:** Suggests the next best Messier targets based on your location/time, remaining items in your checklist and any other factors I can think of (darkness? angle from zenith?)
+### 2) Messier Target Guidance Computer (Web App)
+- **What it is:** All your viewing condition info and suggestion for next best Messier target from your remaining targets based on many meteorlogical factors pulled from free sources on the web.
 - **Try it:** (link when live)  
-- **Inputs:** location, time, horizon cutoff; **Outputs:** ranked list with dusk/dawn windows. Sky darkness info.
+- **Inputs:** location; **Outputs:** Ranked list, conditions<br><br>
+
+> 🚀 **Why Target Guidance Computer is Exciting**  
+> The Target Guidance Computer is more than a Messier checklist – it’s a smart companion that combines astronomy math with real-world conditions.  
+> At a glance you’ll know: ✨ what you haven’t logged yet, 🌙 which objects sit high and clear of the Moon, and ☁️ how tonight’s clouds, darkness, and sky quality affect your session.  
+> With nothing more than a passphrase and your postal code, the tool personalizes your observing journey, tracks your “seen” list, and serves up the best targets for today at **9 PM local time**.  
+> 💡 Lightweight, free, and built to grow – practical backend engineering powering human-friendly exploration of the night sky.
+<br>
 
 ### 3) Dobsonian Astrophotography — Simple Stacking Utils (CLI, GUI.. tbd)
 - **What it is:** Lightweight, beginner-friendly image stacking pipeline for Dobsonian + MFT DSLR. For myself I'm planning micro four thirds adapter to keep weight down. Dobsonian is not expected to be best choice for astrophotography, but like a manual transmission car, I'd like to explore what steps optimize the fun and results even if it might not outclass dedicated rigs and smartscopes.
