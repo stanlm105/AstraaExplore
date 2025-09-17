@@ -16,9 +16,7 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 
 > Hi, my name is Mike. MessierExplore is a personal astronomy journey turned open toolkit — offering logbooks, sky guidance, and astrophotography utilities. Free, beginner-friendly, and built with Python + cloud tools.<br><br>
 > There are many different avenues one could take in this topic, which is fascinating. I'm intrigued by Red Cat's high production products, I'm intrigued by the automated pipelines and precise EQ tracking of SmartScopes. That said, the focus of the explorations here will be through that of the classic dobsonian. <br><br>
-> The first quest in this journey is the classic exercise of the Messier Observing Program for manually logging and sketching the 110 Messier objects of the night sky.<br><br>
-> The side quest is exploring astrophotography and will share both triumphs and challenges.<br><br>
-> I will freely add materials, tools, utilities here that aid in the journey.<br><br>
+> The suggested first quest in this journey is the classic exercise of the Messier Observing Program for logging and sketching the 110 Messier objects of the night sky.<br><br>
 
 ---
 
@@ -33,10 +31,10 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 > One page, easy access. No install required.
 
 ### 1) Messier Observing Logbook (PDF)
-- **What it is:** Printable, numbered logbook (110 objects), with full-page notes & sketch area, and a clean cover.
-- **Get it Free:** https://messierexplore.com
+- **What it is:** Printable logbook with the 110 Messier objects.
+- **Get your personalized PDF Free:** https://messierexplore.com
 - **Code:** Located in this repository as a python command-line script, and then as a web service; see files named logbook.
-- **Features:** personalized cover page, checklist, per-object log pages, clean typography.
+- **Features:** personalized cover page, tracking checklist, per-object log pages, sketch area, clean typography.
 
 ### 2) Messier Target Guidance Computer (Web App)
 - 📝 **Inputs:** location, passphrase  
@@ -47,9 +45,9 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 > The Target Guidance Computer is more than a Messier checklist – it’s a smart companion that combines astronomy math with real-world conditions.  
 > ✨ Shows you what you haven’t logged yet  
 > 🌙 Highlights which objects sit high and clear of the Moon  
-> ☁️ Explains how tonight’s clouds, darkness, and sky quality affect your session  
->  
-> With nothing more than a passphrase and your postal code, the tool personalizes your observing journey, tracks your “seen” list, and serves up the best targets for **today at 9 PM local time**.  
+> ☁️ Explains how tonight’s clouds, darkness, and sky quality affect your session
+>   
+> Minimalist design so you're up and running in seconds, with your passphrase and postal code, the tool personalizes your observing journey, tracks your “seen” list, and serves up the conditions and best targets for **today at 9 PM local time**.  
 > 💡 Lightweight, free, and built to grow – practical backend engineering powering human-friendly exploration of the night sky.
 
 ### 3) Dobsonian Astrophotography — Simple Stacking Utils (CLI, GUI.. tbd)
