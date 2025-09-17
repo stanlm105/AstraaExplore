@@ -60,11 +60,15 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 
 ## Code & Repo Structure
 ```text
-├── assets/          # templates, static files
-├── services/        # tools (eg logbook) as web services
-├── tools/           # tools (eg logbook) as command line apps
+├── assets/          # template pdfs employed by the logbook
+├── data/            # messier object list, temporary sqlite db for playing (a production env would employ a cloud sql backend)
+├── docs/            # license and manuals (work-in-progress)
+├── output/          # the output folder of personalized logbooks if running logbook locally by commandline
+├── services/        # web services of all tools (logbook, target guidance computer)
+├── static/          # static images in a folder accessible by the web services
 ├── tests/           # pytest test suite
-└── utils/           # shared logic between web service apps and CLI apps 
+├── tools/           # cli version of tools as command line apps (logbook)
+└── utils/           # shared logic for tools that come in web service and also commandline flavors 
 ```
 
 ---
