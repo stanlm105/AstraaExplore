@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  logbook:
+    build:
+      context: .
+      dockerfile: services/logbook/Dockerfile
+    command: python run_logbook_service.py
+    ports:
+      - "8080:8080"
+
+  target_guidance:
+    build:
+      context: .
+      dockerfile: services/target_guidance_computer/Dockerfile
+    command: python run_target_guidance_service.py
+    ports:
+      - "8081:8080"
+    env_file: ./services/target_guidance_computer/.env
