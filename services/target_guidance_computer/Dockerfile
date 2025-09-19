@@ -29,4 +29,4 @@ USER appuser
 EXPOSE 8080
 
 # Run Gunicorn
-CMD exec gunicorn --timeout 120 --bind :$PORT services.target_guidance_computer:app
+CMD exec gunicorn --timeout 120 --bind :$PORT --workers 1 run_targetguidancecomputer_service:app

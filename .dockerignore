@@ -5,31 +5,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# VS Code settings
-.vscode/
-
-# Mac system files
-.DS_Store
-
-# Output PDFs or other generated files
-output/
-*.pdf
-
-# Git
-.git/
-.gitignore
-
-# OS junk files
-Thumbs.db
-ehthumbs.db
-
 # Python virtual environments
-venv/
-.venv/
+*venv/
 build/
 dist/
-*.log
-.DS_Store
 
 # Python packaging
 *.egg-info/
@@ -42,7 +21,41 @@ dist/
 
 # Environment files
 .env
+.env.*
+*.env
 
-# Misc
-*.bak
+# SSL certificates
+*.pem
+*.key
+*.crt
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE files
+.vscode/
+.idea/
 *.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Output / generated files
+output/
+*.pdf
+*.log
+*.bak
+
+# Docker files
+Dockerfile*
+docker-compose*.yml
+.dockerignore

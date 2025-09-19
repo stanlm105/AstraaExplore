@@ -29,4 +29,4 @@ USER appuser
 EXPOSE 8080
 
 # Run Gunicorn
-CMD exec gunicorn --timeout 120 --bind :$PORT services.logbook.flask_logbook_service:app
+CMD exec gunicorn --timeout 120 --bind :$PORT --workers 1 run_logbook_service:app
