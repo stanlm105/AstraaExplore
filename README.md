@@ -29,7 +29,7 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 
 > One page, easy access. No install required.
 
-### 1) Messier Observing Logbook (PDF)
+### 1) Messier Observing Logbook (Web App -> PDF)
 <img src="static/logbook_sample_bk.png" width=500><br>
 - **What it is:** Printable logbook with the 110 Messier objects.
 - **Get your personalized PDF Free:** https://logbook.messierexplore.com
@@ -50,6 +50,7 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 >   
 > Minimalist design so you're up and running in seconds, with your approximate location, the tool personalizes your observing journey, tracks your “seen” list, and serves up the conditions and best targets for **today at 9 PM local time**.
 > 💡 Lightweight, free, and built to grow – practical backend engineering powering human-friendly exploration of the night sky.
+> Mobile formatted display coming soon
 
 ### 3) Dobsonian Astrophotography — Simple Stacking Utils (CLI, GUI.. tbd)
 - **What it is:** Lightweight, beginner-friendly image stacking pipeline for Dobsonian + MFT DSLR. For myself I'm planning micro four thirds adapter to keep weight down. Dobsonian is not expected to be best choice for astrophotography, but like a manual transmission car, I'd like to explore what steps optimize the fun and results even if it might not outclass dedicated rigs and smartscopes.
