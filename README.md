@@ -1,6 +1,5 @@
-![Logo](static/logo_main_2_nobg.png)
-
-# 🌌 MessierExplore  
+<img src="static/logo_main_2_nobg.png" width=400><br>
+# MessierExplore  
 _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, beginner-friendly utilities._  
 
 [![Made with Python](https://img.shields.io/badge/Python-3.11+-informational)]()
@@ -12,11 +11,11 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 ![Cloud Run](https://img.shields.io/badge/Deployed%20on-Cloud%20Run-blue)
 ![Open-Meteo](https://img.shields.io/badge/Weather-Open--Meteo-lightblue)
 
-![Sample Logbook](static/logbook_sample.png)
+<img src="static/logbook_sample.png" width=400><br>
 
 > Hi, my name is Mike. MessierExplore is a personal astronomy journey turned open toolkit — offering logbooks, sky guidance, and astrophotography utilities. Free, beginner-friendly, and built with Python + cloud tools.<br><br>
-> There are many different avenues one could take in this topic, which is fascinating. I'm intrigued by Red Cat's high production products, I'm intrigued by the automated pipelines and precise EQ tracking of SmartScopes. That said, the focus of the explorations here will be through that of the classic dobsonian. <br><br>
-> The suggested first quest in this journey is the classic exercise of the Messier Observing Program for logging and sketching the 110 Messier objects of the night sky.<br><br>
+> There are many different avenues one could take in this topic, which makes for a very deep hobby/journey! I hope to cover several branches over time, but for now, the explorations here will be leaning towards the route of the classic dobsonian.<br><br>
+> The suggested first quest in this journey is the classic exercise of the Messier Observing Program for logging and sketching the 110 Messier objects of the night sky, with log book and assisted guidance computer below.<br><br>
 
 ---
 
@@ -31,15 +30,17 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 > One page, easy access. No install required.
 
 ### 1) Messier Observing Logbook (PDF)
+<img src="static/logbook_sample.png" width=500><br>
 - **What it is:** Printable logbook with the 110 Messier objects.
 - **Get your personalized PDF Free:** https://logbook.messierexplore.com
 - **Code:** Located in this repository as a python command-line script, and then as a web service; see files named logbook.
 - **Features:** personalized cover page, tracking checklist, per-object log pages, sketch area, clean typography.
 
 ### 2) Messier Target Guidance Computer (Web App)
+<img src="static/tcg_sample.png" width=500><br>
 - 📝 **Inputs:** location, passphrase  
 - 📊 **Outputs:** ranked list of suggested Messier targets + tonight’s conditions  
-- 🌐 **Try it:** (link when live)
+- 🌐 **Try it:** https://tcg.messierexplore.com
 
 > 🚀 **Why Target Guidance Computer is Exciting**  
 > The Target Guidance Computer is more than a Messier checklist – it’s a smart companion that combines astronomy math with real-world conditions.  
@@ -47,7 +48,7 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 > 🌙 Highlights which objects sit high and clear of the Moon  
 > ☁️ Explains how tonight’s clouds, darkness, and sky quality affect your session
 >   
-> Minimalist design so you're up and running in seconds, with your passphrase and postal code, the tool personalizes your observing journey, tracks your “seen” list, and serves up the conditions and best targets for **today at 9 PM local time**.  
+> Minimalist design so you're up and running in seconds, with your approximate location, the tool personalizes your observing journey, tracks your “seen” list, and serves up the conditions and best targets for **today at 9 PM local time**.
 > 💡 Lightweight, free, and built to grow – practical backend engineering powering human-friendly exploration of the night sky.
 
 ### 3) Dobsonian Astrophotography — Simple Stacking Utils (CLI, GUI.. tbd)
