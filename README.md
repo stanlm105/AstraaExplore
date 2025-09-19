@@ -40,7 +40,7 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 <img src="static/tcg_sample.png" width=500><br>
 - 📝 **Inputs:** location, passphrase  
 - 📊 **Outputs:** ranked list of suggested Messier targets + tonight’s conditions  
-- 🌐 **Try it:** https://tcg.messierexplore.com
+- 🌐 **Try it:** https://tgc.messierexplore.com
 
 > 🚀 **Why Target Guidance Computer is Exciting**  
 > The Target Guidance Computer is more than a Messier checklist – it’s a smart companion that combines astronomy math with real-world conditions.  
