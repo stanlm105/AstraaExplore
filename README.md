@@ -11,7 +11,7 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 ![Cloud Run](https://img.shields.io/badge/Deployed%20on-Cloud%20Run-blue)
 ![Open-Meteo](https://img.shields.io/badge/Weather-Open--Meteo-lightblue)
 
-<img src="static/logbook_sample.png" width=400><br>
+<img src="static/logbook_sample_bk.png" width=400><br>
 
 > Hi, my name is Mike. MessierExplore is a personal astronomy journey turned open toolkit — offering logbooks, sky guidance, and astrophotography utilities. Free, beginner-friendly, and built with Python + cloud tools.<br><br>
 > There are many different avenues one could take in this topic, which makes for a very deep hobby/journey! I hope to cover several branches over time, but for now, the explorations here will be leaning towards the route of the classic dobsonian.<br><br>
@@ -30,7 +30,7 @@ _Free Astronomy Tools & Mini-Projects — explore the night sky with smart, begi
 > One page, easy access. No install required.
 
 ### 1) Messier Observing Logbook (PDF)
-<img src="static/logbook_sample.png" width=500><br>
+<img src="static/logbook_sample_bk.png" width=500><br>
 - **What it is:** Printable logbook with the 110 Messier objects.
 - **Get your personalized PDF Free:** https://logbook.messierexplore.com
 - **Code:** Located in this repository as a python command-line script, and then as a web service; see files named logbook.
